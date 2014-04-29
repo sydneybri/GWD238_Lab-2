@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sydney Carter's Lab 2</title>
+<style>
+	#pic{
+		height: 700px;
+		width: 600px;
+	}
+	
+	nav a{
+		font: 2em/2 "Arial Black", Gadget, sans-serif;
+		color: #F69;
+		padding: 1em;
+		text-decoration: none;
+	}
+	
+	p{
+		font: 1.25em/1.6 "Helvetica", sans serif;
+		color: #F60;
+	}		
+</style>
+</head>
+
+<body>
+
+    <nav id="kitty">
+        <a href="images/kitty1.jpg" title="Hello Kitty in her geisha get-up.">Picture One</a>
+        <a href="images/kitty2.jpg" title="Hello Kitty in her zebra suit.">Picture Two</a>
+        <a href="images/kitty3.jpg" title="Hello Kitty in her ninja stance.">Picture Three</a>
+    </nav>
+    
+    <img id="pic" src="images/kitty1.jpg" width="600px" height="700px" alt="JS gallery" />
+    
+    <p id="caption">Hello Kitty in her geisha get-up.</p>
+     
+	<script>
+		var kitty = document.getElementById('kitty');
+		var pic = document.querySelector('#pic');
+		var caption = document.querySelector('#caption');
+		var links = document.querySelectorAll('#kitty a');
+		
+		for(var i= 0; i < links.length; i++)
+		{
+			links[i].onclick = changePic;	
+		}
+		
+		function changePic(e)
+		{
+			e.preventDefault();
+			pic.src = e.target.href;
+			caption.firstChild.nodeValue = e.target.title;	
+		}
+    
+    
+    </script>
+</body>
+</html>
